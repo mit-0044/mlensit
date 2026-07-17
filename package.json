@@ -1,0 +1,57 @@
+{
+  "name": "@mit-0044/mlensit",
+  "version": "0.1.12",
+  "private": false,
+  "description": "Offline Static Code Intelligence Platform: analyze a TypeScript/JavaScript project, generate and run tests, and produce reports — entirely through static analysis, no network calls, no AI at runtime.",
+  "keywords": [
+    "cli",
+    "static-analysis",
+    "code-quality",
+    "typescript",
+    "test-generation",
+    "architecture",
+    "offline"
+  ],
+  "homepage": "https://github.com/mit-0044/mlensit",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mit-0044/mlensit.git",
+    "directory": "packages/cli"
+  },
+  "bugs": {
+    "url": "https://github.com/mit-0044/mlensit/issues"
+  },
+  "license": "MIT",
+  "type": "module",
+  "engines": {
+    "node": ">=18"
+  },
+  "bin": {
+    "mlensit": "dist/index.cjs"
+  },
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "tsup",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "prepublishOnly": "npm run build"
+  },
+  "devDependencies": {
+    "@mlensit/ai": "*",
+    "@mlensit/analyzer": "*",
+    "@mlensit/core": "*",
+    "@mlensit/dashboard": "*",
+    "@mlensit/reporter": "*",
+    "@mlensit/scanner": "*",
+    "@mlensit/shared": "*",
+    "@mlensit/test-generator": "*",
+    "@mlensit/test-runner": "*",
+    "commander": "^12.1.0",
+    "tsup": "^8.3.5",
+    "typescript": "^5.7.3"
+  }
+}
